@@ -4,8 +4,8 @@ const SymbolOfExcellenceComponent = () => {
   return (
     <SymbolOfExcellenceStyle>
       <div className="element__one">
-        <h1>A Symbol of Excellence in Placement Training</h1>
-        <p>
+        <h1 className="title">A Symbol of Excellence in Placement Training</h1>
+        <p className="para">
           Aptitude Guru Hem was born from the aspiration to create a learning
           environment that inspires greatness. Our founder, driven by personal
           experiences and a desire to make a difference, established the company
@@ -16,7 +16,7 @@ const SymbolOfExcellenceComponent = () => {
       <div className="element__two">
         <div className="element__two__child">
           <h2 className="sub__title">Our Vision</h2>
-          <p>
+          <p className="details">
             Our vision is to empower individuals from diverse backgrounds to
             become accomplished professionals. At Aptitude Guru Hem, we believe
             that knowledge has the power to transcend boundaries.
@@ -24,7 +24,7 @@ const SymbolOfExcellenceComponent = () => {
         </div>
         <div className="element__two__child">
           <h2>Our Mission</h2>
-          <p>
+          <p className="details">
             Our mission is to revolutionize education by providing comprehensive
             training in aptitude, coding, and web/mobile development. We foster
             a culture of inclusivity and personal growth.
