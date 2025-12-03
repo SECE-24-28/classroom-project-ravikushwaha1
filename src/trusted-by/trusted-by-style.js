@@ -59,7 +59,7 @@ export const TrustedByStyle = styled.section`
     align-items: center;
     padding: 30px 20px;
     border-radius: 12px;
-    background: #f8fafc;
+    background: #fcfbf8ff;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
