@@ -6,6 +6,7 @@ import PostionComponent from "./positioning/position-component";
 import SymbolOfExcellenceComponent from "./symbol-of-excellence/symbol-of-execllence-component";
 import TrustedbyComponent from "./trusted-by/trusted-by-component";
 
+
 function App() {
   return (
     <div>
@@ -13,7 +14,7 @@ function App() {
       {/* <FlexBoxComponent /> */}
       {/* <LeadersTomorrowComponent /> */}
       {/* <SymbolOfExcellenceComponent /> */}
-      {/* <PostionComponent /> */}
+       {/*<PostionComponent /> */}
       <TrustedbyComponent />
     </div>
   );
