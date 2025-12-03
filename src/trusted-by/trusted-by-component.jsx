@@ -1,11 +1,16 @@
 import React from "react";
 import { TrustedByStyle } from "./trusted-by-style";
+import { faBuildingColumns } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const TrustedbyComponent = () => {
   return (
     <TrustedByStyle>
       <h1>Trusted By</h1>
       <div className="parent">
         <div className="child">
+          <FontAwesomeIcon icon={faBuildingColumns} />
+
           <span className="numbers">100+</span>
           <br></br>
           <span className="details">Colleges</span>
