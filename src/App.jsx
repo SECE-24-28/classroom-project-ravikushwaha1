@@ -19,8 +19,8 @@ function App() {
       {/* <PostionComponent /> */}
       {/* <TrustedbyComponent /> */}
       {/* <FlexWrapComponent /> */}
-      {/* <OurPromisesComponent /> */}
-      <PositionExampleComponent />
+      <OurPromisesComponent />
+      {/* <PositionExampleComponent /> */}
     </div>
   );
 }
