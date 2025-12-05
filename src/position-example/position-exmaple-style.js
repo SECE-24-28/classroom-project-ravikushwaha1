@@ -1,5 +1,9 @@
 import styled from "styled-components";
 export const PostionExampleStyle = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   .box {
     //   position: absolute;
     position: relative;
@@ -33,5 +37,39 @@ export const PostionExampleStyle = styled.div`
     top: initial;
     bottom: 0px;
     background-color: aqua;
+  }
+  .value {
+    font-size: 40px;
+    font-weight: 700;
+    color: gray;
+  }
+  .name {
+    font-size: 20px;
+    font-weight: 500;
+    color: gray;
+  }
+  .circular__parent {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.4rem;
+    translate: -50% -50%;
+  }
+  .circle {
+    width: 70px;
+    height: 70px;
+    padding: 0.4rem;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
