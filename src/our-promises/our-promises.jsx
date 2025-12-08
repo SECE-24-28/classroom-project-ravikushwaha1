@@ -8,9 +8,7 @@ const OurPromisesComponent = () => {
     <OurPromisesStyle gapLength="20px">
       <div className="paras">
         <h1>Our Promise</h1>
-        <p>
-          extra too.
-        </p>
+        <p>extra too.</p>
       </div>
       <div className="parent">
         {OurpromisesData.map((item, index) => {
