@@ -1,5 +1,4 @@
 import "./App.css";
-
 import { Routes, Route } from "react-router-dom";
 import HelloWorldComponent from "./hello-world/hello-world-component";
 import OurPromisesComponent from "./our-promises/our-promises";
@@ -10,11 +9,14 @@ import FourOFourComponent from "./404-component/404-component";
 import UseStateComponent from "./usestate-1st/use-state-component";
 import UsestateformComponent from "./use-state-form/use-state-form-component";
 import AdditionOperationComponent from "./addition-operation-in-state/addition-operation-component";
+import SignUpComponent from "./sign-up/sign-up-component";
+
 function App() {
   const arr1 = [
     { name: "sai", mobile: "1234" },
     { name: "ragu", mobile: "5678" },
   ];
+  
   const IndexPage = () => {
     return (
       <div
@@ -33,18 +35,13 @@ function App() {
       </div>
     );
   };
+  
   return (
     <div>
       <Routes>
         <Route path="/eshwar" element={<HelloWorldComponent />} />
         <Route path="/our-promise" element={<OurPromisesComponent />} />
         <Route path="/" element={<TrustedbyComponent />} />
-
-        {/* <Route path="/leetcode/*" element={<HelloWorldComponent />}>
-          <Route index element={<IndexPage />} />
-          <Route path="trusted-by" element={<TrustedbyComponent />} />
-          <Route path="our-promise" element={<OurPromisesComponent />} />
-        </Route> */}
         <Route path="/leetcode/:id" element={<SymbolOfExcellenceComponent />} />
         <Route path="*" element={<FourOFourComponent />} />
         <Route path="/use-state-practice" element={<UseStateComponent />} />
@@ -53,6 +50,7 @@ function App() {
           path="/addition-operation"
           element={<AdditionOperationComponent />}
         />
+        <Route path="/sign_up" element={<SignUpComponent />} />
       </Routes>
     </div>
   );
