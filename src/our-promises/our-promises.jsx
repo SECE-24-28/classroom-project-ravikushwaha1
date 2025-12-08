@@ -9,7 +9,6 @@ const OurPromisesComponent = () => {
       <div className="paras">
         <h1>Our Promise</h1>
         <p>
-          As part of our high quality service, we'd like to offer something
           extra too.
         </p>
       </div>

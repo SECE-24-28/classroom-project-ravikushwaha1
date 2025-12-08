@@ -8,13 +8,15 @@ import React from "react";
 //     </div>
 //   );
 // };
-const PropsPractice = ({ name, mobile }) => {
+const PropsPractice = (props) => {
   return (
     <div>
       <h1>Heading</h1>
-      <div>{name}</div>
-      <div>{mobile}</div>
+      <div>{props?.name}</div>
+      <div>{props?.mobile}</div>
     </div>
   );
 };
 export default PropsPractice;
+
+const arr1 = [{ name: "sai", mobile: "1234" }, { name: "ragu" }];
