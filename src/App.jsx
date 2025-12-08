@@ -9,6 +9,7 @@ import SymbolOfExcellenceComponent from "./symbol-of-excellence/symbol-of-execll
 import FourOFourComponent from "./404-component/404-component";
 import UseStateComponent from "./usestate-1st/use-state-component";
 import UsestateformComponent from "./use-state-form/use-state-form-component";
+import AdditionOperationComponent from "./addition-operation-in-state/addition-operation-component";
 function App() {
   const arr1 = [
     { name: "sai", mobile: "1234" },
@@ -48,6 +49,10 @@ function App() {
         <Route path="*" element={<FourOFourComponent />} />
         <Route path="/use-state-practice" element={<UseStateComponent />} />
         <Route path="/use-state-form" element={<UsestateformComponent />} />
+        <Route
+          path="/addition-operation"
+          element={<AdditionOperationComponent />}
+        />
       </Routes>
     </div>
   );
