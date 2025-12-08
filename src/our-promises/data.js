@@ -1,3 +1,7 @@
+//props
+//react router dom
+//useState and useEffect
+//
 import {
   faLaptopCode,
   faMobile,
