@@ -10,6 +10,7 @@ import FourOFourComponent from "./404-component/404-component";
 import UseStateComponent from "./usestate-1st/use-state-component";
 import UsestateformComponent from "./use-state-form/use-state-form-component";
 import AdditionOperationComponent from "./addition-operation-in-state/addition-operation-component";
+import FetchApiComponent from "./fetch-api/fetch-api-component";
 function App() {
   const arr1 = [
     { name: "sai", mobile: "1234" },
@@ -53,6 +54,7 @@ function App() {
           path="/addition-operation"
           element={<AdditionOperationComponent />}
         />
+        <Route path="/api-fetch" element={<FetchApiComponent />} />
       </Routes>
     </div>
   );
