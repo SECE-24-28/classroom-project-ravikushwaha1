@@ -30,8 +30,39 @@ import axios from "axios";
 //  }
 //  fetchApi();
 
-async function fetchApi() {
-  const response = await axios("https://jsonplaceholder.typicode.com/users");
-  console.log("The user:", response);
+// async function fetchApi() {
+//   const response = await axios("https://jsonplaceholder.typicode.com/users");
+//   console.log("The user:", response);
+// }
+// fetchApi();
+
+// async function fetchApi() {
+//   try {
+//     const response = await axios("https://jsonplaceholder.typicode.com/users");
+//     console.log("The user:", response);
+//   } catch (error) {
+//     console.log("Error", error);
+//   }
+// }
+
+// fetchApi();
+
+// https://dummyjson.com/products
+
+// https://dummyjson.com/todos
+
+// https://dummyjson.com/users
+
+async function fetchMultipleApis() {
+  let urls = [
+    "https://jsonplaceholder.typicode.com/users",
+    "https://jsonplaceholder.typicode.com/users",
+  ];
+  let promises = urls.map((item) => fetch(item).then((res) => res.json()));
+  let data = await Promise.all(promises);
+  console.log("The data is printed:", data);
+
+  //   console.log("Promises:", promises);
 }
-fetchApi();
+
+fetchMultipleApis();
