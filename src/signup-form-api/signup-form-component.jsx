@@ -8,7 +8,7 @@ const SignupFormComponent = () => {
     try {
       console.log("CHECK ENTRY 2381");
 
-      const pushDetails = await axios(
+      const pushDetails = await axios.post(
         "http://localhost:21000/api/v1/User/userSignup",
         {
           firstName: e.target.firstname.value,
