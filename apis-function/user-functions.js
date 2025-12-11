@@ -1,10 +1,9 @@
 const User = require("../models/user");
 exports.createUser = async (req, res) => {
   try {
-    const { details } = req.body;
+    const { firstName, email } = req.body;
     const creatUser = await User.insertOne({
       firstName: firstName,
-      lastName: lastName,
       email: email,
     });
     return res.status(200).json({
@@ -59,6 +58,58 @@ exports.updateEmail = async (req, res) => {
     return res.status(200).json({
       success: true,
       message: "email is updated",
+    });
+  } catch (e) {
+    res.status(404).json({
+      success: false,
+      error: e,
+    });
+  }
+};
+
+exports.getDetails = async (req, res) => {
+  try {
+    const { id, mainDetails } = req.query;
+    const { data } = req.params;
+    console.log("the params:", data);
+
+    // console.log("The id details:", id, mainDetails);
+    // console.log("=>(The data:)<=", data);
+    // console.log("The main details:", mainDetails);
+    return res.status(200).json({
+      success: true,
+      message: "The data got filled",
+    });
+  } catch (e) {
+    res.status(404).json({
+      success: false,
+      error: e,
+    });
+  }
+};
+exports.userRegister = async (req, res) => {
+  try {
+    const { email, firstName, secondName, mobileNumber, password } = req.body;
+
+    const findUser = await User.findOne({ email: email });
+    //console.log("The find user:", findUser);
+
+    if (findUser) {
+      return res.status(400).json({
+        success: false,
+        message: "User is already resigtered",
+      });
+    }
+    await User.create({
+      email,
+      firstName,
+      secondName,
+      mobileNumber,
+      password,
+    });
+    return res.status(200).json({
+      success: true,
+      message: "User is registed successfully",
     });
   } catch (e) {
     res.status(404).json({
