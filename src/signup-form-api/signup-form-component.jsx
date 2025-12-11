@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 const SignupFormComponent = () => {
   const [getDetails, setGetDetails] = useState([]);
+  const [change, setChange] = useState(false);
   const onSubmit = async (e) => {
     e.preventDefault();
     // console.log("=>(The value:)>=", e.target.email.value);
@@ -23,6 +24,7 @@ const SignupFormComponent = () => {
 
       if (pushDetails.data.success === true) {
         console.log("The process is successful");
+        setChange(!change);
       } else {
         console.log("Error occured");
       }
@@ -35,14 +37,14 @@ const SignupFormComponent = () => {
       const getDetails = await axios.get(
         "http://localhost:21000/api/v1/User/getUsers"
       );
-      setGetDetails(getDetails.data.data);
+      setGetDetails(getDetails.data.getUsers);
     } catch (e) {
       console.log("Error:", e);
     }
   };
   useEffect(() => {
     getDetailsFunction();
-  }, []);
+  }, [change]);
   console.log("The main data:", getDetails);
 
   return (
@@ -60,6 +62,16 @@ const SignupFormComponent = () => {
         <input type="number" id="password" />
         <button type="submit">Submit</button>
       </form>
+      <div>
+        {getDetails?.map((item, index) => {
+          return (
+            <div key={index}>
+              <h1>{item?.firstName}</h1>
+              <h2>{item?.email}</h2>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
