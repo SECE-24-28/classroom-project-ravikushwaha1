@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
+import { toast } from "react-toastify";
 const SignupFormComponent = () => {
   const [getDetails, setGetDetails] = useState([]);
   const [change, setChange] = useState(false);
@@ -30,8 +31,13 @@ const SignupFormComponent = () => {
       } else {
         console.log("Error occured");
       }
-    } catch (e) {
-      console.log("Error:", e.message);
+    } catch (error) {
+      const msg =
+        error?.response?.data?.message ||
+        error?.response?.data ||
+        "Something went wrong";
+      toast.error(msg);
+      // console.log("Backend Error:", msg);
     }
   };
   const getDetailsFunction = async () => {
