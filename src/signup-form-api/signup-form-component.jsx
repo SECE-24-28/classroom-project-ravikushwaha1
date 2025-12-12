@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 const SignupFormComponent = () => {
   const [getDetails, setGetDetails] = useState([]);
@@ -42,6 +44,27 @@ const SignupFormComponent = () => {
       console.log("Error:", e);
     }
   };
+  const deleteFunction = async (id) => {
+    try {
+      const getDetails = await axios.delete(
+        `http://localhost:21000/api/v1/User/deleteUsers/${id}`,
+        {
+          // query: {
+          //   id: id,
+          // },
+        }
+      );
+      if (getDetails.data.success === true) {
+        setChange(!change);
+        console.log("Data is deleted successfully");
+      } else {
+        console.log("Data is not deleted");
+      }
+      // setGetDetails(getDetails.data.getUsers);
+    } catch (e) {
+      console.log("Error:", e);
+    }
+  };
   useEffect(() => {
     getDetailsFunction();
   }, [change]);
@@ -68,6 +91,14 @@ const SignupFormComponent = () => {
             <div key={index}>
               <h1>{item?.firstName}</h1>
               <h2>{item?.email}</h2>
+              <div
+                style={{ cursor: "pointer" }}
+                onClick={() => {
+                  deleteFunction(item._id);
+                }}
+              >
+                <FontAwesomeIcon icon={faTrash} />
+              </div>
             </div>
           );
         })}
